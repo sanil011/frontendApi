@@ -19,8 +19,9 @@ const HistoryCard = ({ data }) => {
         axios.delete('https://api-gqye.onrender.com/history/' + data?.id)
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
-            .finally(() => location.reload())
+            .finally(() => window.location.href = window.location.href)
     }
+
 
     const cardHandler = () => {
         dispatch(appActions.Modal({ popover: true, link: data?.video }))
@@ -36,7 +37,7 @@ const HistoryCard = ({ data }) => {
 
     useEffect(() => {
         if (reload) {
-            location.reload();
+            window.location.href = window.location.href
             setReload(false);
         }
     },[reload])

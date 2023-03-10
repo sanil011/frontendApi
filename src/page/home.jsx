@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux'
 import { appActions } from '../store/appSlice'
 import { useGlobalContext } from '../context/globalContext'
 import Nodata from "../assets/nodata.svg"
-
+import Header from "../component/header"
 
 const Home = () => {
     const [data, setData] = useState("")
@@ -61,7 +61,7 @@ const Home = () => {
             axios.delete('http://localhost:3000/data/' + db)
                 .then((res) => console.log(res))
                 .catch((err) => console.log(err))
-                .finally(() => (setLoading(false),location.reload()))
+                .finally(() => (setLoading(false), window.location.href = window.location.href))
         })
         }
         else {
@@ -98,13 +98,14 @@ const Home = () => {
             .finally(() =>
                 setLoading(false),
                 setAlert({ flag: true, type: "success", msg: "Bucket Name is Updated" }),
-                setTimeout(() => { location.reload() }, 900)
+                setTimeout(() => { window.location.href = window.location.href }, 900)
             )
 
     }
 
     return (
         <Box>
+            <Header/>
             <VideoModal />
             <UpdateModal />
             <AddModal />
