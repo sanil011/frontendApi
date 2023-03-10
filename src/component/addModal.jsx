@@ -36,7 +36,7 @@ const AddModal = () => {
             .finally(() => (
                 setLoading(false),
                 setAlert({ flag: true, type: "success", msg: "Card is Added" }),
-                setTimeout(() => { window.location.href = window.location.href }, 900) 
+                setTimeout(() => { window.location.reload() }, 900) 
                 
             ))
     }
