@@ -4,7 +4,7 @@ import { Alert, Backdrop, CircularProgress, Snackbar } from "@mui/material";
 import Home from "./page/home"
 import History from "./page/history";
 import { useGlobalContext } from './context/globalContext'
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 function App() {
   const { loading, alert, setAlert } = useGlobalContext();
   const handleAlertClose = () => {
