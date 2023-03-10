@@ -38,7 +38,7 @@ const UpdateModal = () => {
             .finally(() => (
                 setLoading(false),
                 setAlert({ flag: true, type: "success", msg: "Card is Updated" }),
-                setTimeout(() => { window.location.reload() }, 900) 
+                setTimeout(() => { location.reload() }, 900) 
             ))
     }
 

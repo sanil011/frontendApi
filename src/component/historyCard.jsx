@@ -19,7 +19,7 @@ const HistoryCard = ({ data }) => {
         axios.delete('https://api-gqye.onrender.com/history/' + data?.id)
             .then((res) => console.log(res))
             .catch((err) => console.log(err))
-            .finally(() => window.location.reload())
+            .finally(() => location.reload())
     }
 
     const cardHandler = () => {
@@ -36,7 +36,7 @@ const HistoryCard = ({ data }) => {
 
     useEffect(() => {
         if (reload) {
-            window.location.reload();
+            location.reload();
             setReload(false);
         }
     },[reload])

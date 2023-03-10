@@ -61,7 +61,7 @@ const Home = () => {
             axios.delete('http://localhost:3000/data/' + db)
                 .then((res) => console.log(res))
                 .catch((err) => console.log(err))
-                .finally(() => (setLoading(false),window.location.reload()))
+                .finally(() => (setLoading(false),location.reload()))
         })
         }
         else {
@@ -98,7 +98,7 @@ const Home = () => {
             .finally(() =>
                 setLoading(false),
                 setAlert({ flag: true, type: "success", msg: "Bucket Name is Updated" }),
-                setTimeout(() => { window.location.reload() }, 900)
+                setTimeout(() => { location.reload() }, 900)
             )
 
     }
