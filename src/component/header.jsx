@@ -6,7 +6,7 @@ const Header = () => {
   const [location, setLocation] = useState(false);
  
   const handleClick = () => {
-    if (location.pathname == '/') {
+    if (window.location.pathname == '/') {
       navigate('/history');
       setLocation(true);
     } else {
