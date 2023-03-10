@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box, Button, Typography } from "@mui/material"
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 const HeaderHistory = () => {
 
-
+    const navigate = useNavigate();
     const handleClick = () => {
 
-       <Navigate to="/"/>
+       navigate('/')
 
     }
 
